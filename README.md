@@ -1,4 +1,4 @@
-"cat init.sql | heroku pg:psql postgresql-regular-64108 --app yuri-snake"__ - for installing start database to heroku <br>
+"cat init.sql | heroku pg:psql <dbname> --app <appname>"__ - for installing start database to heroku <br>
 
 # Getting Started with Create React App
 
