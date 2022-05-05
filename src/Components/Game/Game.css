@@ -2,13 +2,14 @@
     display: grid;
     width: 950px;
     height: 700px;
-    justify-content: center;
-    align-items: center;
+    justify-items: center;
+    align-items: end;
     grid-template-areas: "border gameBoard userInfo"
                          "border gameBoard info" 
-                         "border gameBoard highScore";
+                         "border gameBoard highScore"
+                         "footer footer footer";
     grid-template-columns: 50px auto 300px;
-    grid-template-rows: 100px 2fr 3fr;
+    grid-template-rows: 100px 2fr 3fr 50px;
     border: 1px solid black;
     margin: auto auto;
   }
@@ -20,11 +21,13 @@
     height: 600px;
     border: 2px solid #000000;
     padding: 0px;
+    margin-bottom: 0px;
   }
 
   .userInfo {
       grid-area: userInfo;
       display: flex;
+      height: 100%;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -33,6 +36,7 @@
   .mainInfo {
     grid-area: info;
     display: flex;
+    height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -45,6 +49,16 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
+  }
+
+  .footer {
+      grid-area: footer;
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2em;
   }
   
   .snakeBody {
@@ -67,5 +81,9 @@
   
   button {
     width: 150px;
-    margin: 20px;
+    margin: 15px;
+  }
+
+  h2 {
+    margin: 15px;
   }

@@ -227,6 +227,7 @@ class Game extends React.Component {
           <h2>High Score:</h2>
           <div className='bestPlayers'></div>
         </div>
+        <div className="footer">Use arrows keys for control your Snake</div>
       </div>
     );
   }
