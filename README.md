@@ -1,3 +1,5 @@
+"cat init.sql | heroku pg:psql <db.name> --app <app.name>"__ - for installing start database to heroku <br>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

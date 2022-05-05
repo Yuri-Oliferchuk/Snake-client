@@ -1,13 +1,9 @@
-const food = [
-    [0,0],
-    [0,0],
-    [1,1],
-    [2,0],
-    [0,0],
-    [0,0],
-]
+import { pool } from "./src/Utils/db.js";
 
-const newFood = food.filter(dot => (dot[0] !== 0) || (dot[1] !== 0));
+const select = async () => {
+  let sql = "SELECT * FROM score ORDER BY high_score DESC LIMIT 10;";
+  const result = await pool.query(sql);
+  return result.rows;
+};
 
-
-console.log(newFood);
+select();

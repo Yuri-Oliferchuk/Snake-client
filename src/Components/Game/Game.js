@@ -14,6 +14,7 @@ const initialState = {
   level: 0,
   speed: 150,
   direction: "RIGHT",
+  highScore: [],
   snakeBody: [
     [0, 0],
     [2, 0],
@@ -51,16 +52,16 @@ class Game extends React.Component {
     e = e || window.event;
     switch (e.keyCode) {
       case 37:
-        this.setState({ direction: "LEFT" });
+        if (this.state.direction !== "RIGHT") this.setState({ direction: "LEFT" });
         break;
       case 38:
-        this.setState({ direction: "UP" });
+        if (this.state.direction !== "DOWN") this.setState({ direction: "UP" });
         break;
       case 39:
-        this.setState({ direction: "RIGHT" });
+        if (this.state.direction !== "LEFT") this.setState({ direction: "RIGHT" });
         break;
       case 40:
-        this.setState({ direction: "DOWN" });
+        if (this.state.direction !== "UP") this.setState({ direction: "DOWN" });
         break;
       default:
     }
@@ -221,7 +222,7 @@ class Game extends React.Component {
           <button onClick={this.onGameFinish}>Finish Game</button>
           <button onClick={this.onGamePause}>Pause</button>
           <div>{`Total Score: ${this.state.score}`}</div>
-          <div>{`Need for level: ${50 - this.state.score}`}</div>
+          <div>{`Need for new level: ${50 - this.state.level}`}</div>
         </div>
         <div className='highScore'>
           <h2>High Score:</h2>
